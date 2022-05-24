@@ -1,0 +1,131 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="idx.master.cs" Inherits="idx" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>爱犬大机密生活馆</title>
+    <link href="themes/ecmoban_hecha/style.css" rel="stylesheet" type="text/css" />
+    <style>
+        tr {
+            line-height: 27px;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="topNav">
+            <div class="block">
+                <div class="f_l">
+
+                    <font id="ECS_MEMBERZONE">
+
+                        <% if (Session["name"] == null)
+                            { %>
+&nbsp;<span>您好，欢迎光临爱犬大机密生活馆！</span>
+                        <a href="login.aspx">登录</a><span style="color: #fffffb;">|</span><a href="reg.aspx">免费注册</a><span style="color: #fffffb;">|</span><a href="gpwd1.aspx">忘记密码？</a>
+                        <%}
+                         else
+                         { %>
+&nbsp;<span>您好，</span><span style="font-family: Arial; color: #333"><b style="color: red;"><%=Session["name"].ToString() %></b> 欢迎登录本站！</span>
+                        <a href="member/default.aspx">[用户中心]</a>
+                        <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">[退出]</asp:LinkButton>
+
+                        <%} %>
+
+
+
+                    </font>
+                </div>
+                <div class="f_r">
+                    <div class=" f_l buy_car_bg_box">
+
+                        <div class="buy_car_bg" id="ECS_CARTINFO" onmouseover="this.className='buy_car_bg ul1_on'" onmouseout="this.className='buy_car_bg'">
+                            <a href="cart.aspx" title="查看购物车">购物车<font style="color: #cf140a;"><asp:Literal ID="ltTotal" runat="server"></asp:Literal></font> 件</a>
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="headBg">
+            <div class="block clearfix">
+                <div class="logo  ">
+                    <a href="index.php" name="top">
+                        <img src="Images/logo3.gif"></a>
+                </div>
+                <div id="search">
+                    <strong>商品类别:</strong><asp:DropDownList ID="ddltid" runat="server" Width="100"></asp:DropDownList>
+                    <strong>商品名称:</strong><asp:TextBox ID="txt_pname" runat="server" Width="100"></asp:TextBox>
+                    <asp:Button ID="Button1" runat="server" Text="搜 索" OnClick="Button1_Click" CssClass="btn" />
+                </div>
+                <div class="tel">
+                    <p>0553-7769-5988</p>
+                </div>
+            </div>
+        </div>
+        <div class="Nav clearfix">
+            <div class="block">
+                <div id="mainNav" class="clearfix">
+                    <div class="category_all2">
+                        <a class="all" href="#">全部商品分类</a>
+                    </div>
+                    <div class="mainNav_r">
+
+                        <a class="aa" href="Default.aspx" title="首页">
+                            <div>首页</div>
+                        </a>
+
+                        <a class="aa" href="gg.aspx" title="狗狗种类">
+                            <span>狗狗种类</span></a>
+
+                        <a class="aa" href="xl.aspx" title="狗狗训练">
+                            <span>狗狗训练</span></a>
+
+                        <a class="aa" href="hl.aspx" title="狗狗护理">
+                            <span>狗狗护理</span></a>
+
+
+                        <a class="aa" href="news.aspx" title="新闻资讯">
+                            <span>新闻资讯</span></a>
+
+
+                        <a class="aa" href="pro.aspx" title="商城">
+                            <span>商城</span></a>
+
+                        <a class="aa" href="cart.aspx" title="购物车">
+                            <span>购物车</span></a>
+
+                        <a class="aa" href="member/default.aspx" title="用户中心">
+                            <span>用户中心</span></a>
+
+                        <a class="aa" href="lyb.aspx" title="留言板">
+                            <span>留言板</span></a>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+
+        <div id="bottomNav" class="box">
+        </div>
+        <div id="footer" style="border-top: solid 2px #98bc04; width: 980px;">
+            <div class="text">
+                <br />
+                © 2022 爱犬生活馆网站版权所有，并保留所有权利&nbsp;&nbsp;<span style="color: #333;">|</span>&nbsp;&nbsp;<a href="admin/login.aspx">管理员登录</a>
+
+                &nbsp;
+            </div>
+        </div>
+    </form>
+</body>
+</html>

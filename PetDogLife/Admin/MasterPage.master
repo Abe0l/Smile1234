@@ -1,0 +1,75 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="image/css/framework-font.css" rel="stylesheet" />
+    <link href="image/css/framework-ui.css" rel="stylesheet" />
+    <link href="image/css/framework-theme.css" rel="stylesheet" />
+    <link href="image/js/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="image/css/framework-theme.css" rel="stylesheet" />
+    <link href="image/css/framework-about.css" rel="stylesheet" />
+    <style>
+        th {
+            text-align: center;
+            height: 32px
+        }
+
+        td {
+            height: 32px
+        }
+    </style>
+    <style>
+        #ctl00_ContentPlaceHolder1_GridView1 table {
+            width: 100%;
+            margin: 15px 0
+        }
+
+        #ctl00_ContentPlaceHolder1_GridView1 th {
+            background-color: #98EBDC;
+            background: -o-linear-gradient(90deg, #98EBDC, #c4f3eb);
+            background: -moz-linear-gradient( center top, #98EBDC 5%, #c4f3eb 100% );
+            background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #98EBDC), color-stop(1, #c4f3eb) );
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#98EBDC', endColorstr='#c4f3eb');
+            color: #000000
+        }
+
+        #ctl00_ContentPlaceHolder1_GridView1, #ctl00_ContentPlaceHolder1_GridView1 th, #ctl00_ContentPlaceHolder1_GridView1 td {
+            font-size: 0.95em;
+            padding: 4px;
+            border: 1px solid #75e4d0;
+            border-collapse: collapse
+        }
+
+            #ctl00_ContentPlaceHolder1_GridView1 td {
+                border: 1px solid #c4f3eb;
+                border-collapse: collapse
+            }
+
+            #ctl00_ContentPlaceHolder1_GridView1 tr:nth-child(odd) {
+                background-color: #dcf8f3;
+                background: -o-linear-gradient(90deg, #dcf8f3, #f8fdfc);
+                background: -moz-linear-gradient( center top, #dcf8f3 5%, #f8fdfc 100% );
+                background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dcf8f3), color-stop(1, #f8fdfc) );
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#dcf8f3', endColorstr='#f8fdfc');
+            }
+
+            #ctl00_ContentPlaceHolder1_GridView1 tr:nth-child(even) {
+                background-color: #fdfdfd;
+            }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
